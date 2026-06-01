@@ -1,67 +1,59 @@
-# Домашние задания по курсу «Базовый JavaScript в браузере»
+# Домашнее задание к лекции «DOM»
 
-## Блок 1. Основы разработки интерфейсов
+Выполните задачи:
 
-#### 1.1. [Возможности JavaScript в браузере.](./js-features/)  
+1. [Появление элементов при прокрутке.](./reveal/)
+2. [Ротатор рекламы.](./ads/)
+3. [Онлайн-читалка.](./book-reader/)
 
-#### 1.2. [Способы поиска нужного HTML-элемента.](./element-search/)
+Чтобы получить зачёт, выполните все три задачи. Пришлите на проверку все три задачи сразу, не частями.
 
-#### 1.3. [Объект события.](./event-object/)
+Работы должны соответствовать принятому [стилю оформления кода.](https://github.com/netology-code/codestyle)
 
-## Блок 2. Работа с DOM
+Любые вопросы по задачам задавайте в чате учебной группы.
 
-#### 2.1. [DOM.](./dom/)
+## Бонус
 
-#### 2.2. [Работа с HTML-формами.](./html-forms/)
+### Загрузка страницы
 
-#### 2.3. [Изменение структуры HTML-документа.](./document-structure/)
+Давайте поговорим о критическом CSS и блокирующем JavaScript.
 
-## Блок 3. Работа с состоянием
+Статьи о критическом CSS:
 
-#### 3.1. [Асинхронные запросы.](./async-requests/)
+1. [Разбираемся с критичным CSS.](http://prgssr.ru/development/razbiraemsya-s-kritichnym-css.html)
+2. [Критический CSS + прогрессивный CSS = ?](https://medium.com/web-standards/critical-and-progressive-css-d6611f034d7d)
 
-#### 3.2. [Хранение состояния на клиенте.](./client-state)
+Для ускорения страниц в теге *link*
+применяется дополнительный атрибут *rel* со значением *preload*.
 
-## Требования
+Узнать об этом подробнее вы можете в статье:
+[Предварительная загрузка контента при помощи rel="preload".](https://developer.mozilla.org/ru/docs/Web/HTML/Preloading_content)
 
-* браузер;
-* редактор кода, например [Sublime Text][1] или [Visual Studio Code][2];
-* аккаунт на [GitHub.][0] [Инструкция по регистрации на GitHub][3];
-* система контроля версий [Git][4], установленная локально. [Инструкция по установке Git][5].
+JavaScript-файл без атрибута async может замедлить загрузку страницы. Подробнее
+читайте в статьях: 
 
-## Начало работы
+1. [Remove Render-Blocking JavaScript.](https://developers.google.com/speed/docs/insights/BlockingJS)
+2. [Оптимизация JavaScript для быстрой визуализации страницы.](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript?hl=ru)
+3. [The Cost Of JavaScript In 2018.](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) 
 
-1. Создайте репозиторий на [GitHub][0]. Параметры репозитория:
-* Repository name: `bhj-homeworks`;
-* Access level: Public;
-* Initialize this repository with a README: No;
-* Add .gitignore: None;
-* Add a license: None.
+Также рекомендуем изучить презентацию [Critical JavaScript Path.](https://speakerdeck.com/jonthanfielding/critical-javascript-path) 
 
-После нажатия на кнопку `Create repository`, вы попадёте на страницу созданного репозитория.
-URL-адрес страницы будет URL-адресом вашего репозитория.
-Пример URL-адреса репозитория: `https://github.com/username/bhj-homeworks`, где `username` — имя вашего профиля GitHub, `bhj-homeworks` — название репозитория. Далее адрес вашего репозитория будет иметь обозначение: `%repo-url%`.
+### Узлы
 
-2. Создайте директорию на вашем компьютере, в которой вы будете выполнять домашние задания.
-3. Откройте созданную директорию с помощью терминала или командной строки вашей операционной системы.
-4. Клонируйте репозиторий с домашними заданиями с помощью команды `git clone https://github.com/netology-code/bhj-homeworks` в открывшемся терминале или командной строке.
-5. Перейдите в директорию склонированного репозитория `cd ./bhj-homeworks`.
-6. Добавьте репозиторий в проект `git remote add homeworks %repo-url%`, где `%repo-url%` — адрес созданного репозитория.
+Вы уже знаете, что наиболее важные узлы в DOM — текстовые и HTML-элементы.
+Все узлы реализуются в интерфейсе [Node.](https://developer.mozilla.org/ru/docs/Web/API/Node)
+Реализация HTML-элементов (наследуют свойства и методы от *Node*)
+представлена интерфейсом [Element](https://developer.mozilla.org/ru/docs/Web/API/Element).
 
-## Решение задач
-1. Перейдите в папку задания, например, для первого задания `cd ./js-features`.
-2. Откройте файл `main.js` в редакторе кода и выполните задание.
-3. Откройте файл `index.html` в браузере и с помощью консоли DevTools убедитесь, что результаты выводятся правильно.
-4. Добавьте файл `main.js` в индекс git с помощью команды `git add %file-path%`, где `%file-path%` — путь до целевого файла, например, для первого задания `git add main.js`.
-5. Сделайте коммит, используя команду `git commit -m '%comment%'`, где %comment% — это произвольный комментарий к вашему коммиту, например, для первого задания `git commit -m 'first commit variables'`.
-6. Опубликуйте код в репозиторий homeworks с помощью команды `git push -u homeworks master`. 
-7. Прикрепите ссылку на репозиторий в личном кабинете на сайте [Нетологии][6].
+Мы говорим преимущественно о 2 типах узлов, но в DOM их [12 типов](https://developer.mozilla.org/ru/docs/Web/API/Node/nodeType),
+почти половина из которых порицается.
 
+### Подробнее о DOM
 
-[0]: https://github.com/
-[1]: https://www.sublimetext.com/
-[2]: https://code.visualstudio.com/
-[3]: https://github.com/netology-code/guides/blob/master/github/README.md
-[4]: https://git-scm.com/
-[5]: https://github.com/netology-code/guides/blob/master/git/README.md
-[6]: https://netology.ru/
+Часть из этих статей вы также можете найти в конце презентации к лекции.
+
+1. [Атрибуты и DOM-свойства.](https://learn.javascript.ru/attributes-and-custom-properties)
+2. [Использование data-* атрибутов.](https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Using_data_attributes)
+3. [Координаты в окне.](https://learn.javascript.ru/coordinates)
+4. [Element.getBoundingClientRect().](https://developer.mozilla.org/ru/docs/Web/API/Element/getBoundingClientRect)
+5. [Translating Viewport Coordinates Into Element-Local Coordinates Using Element.getBoundingClientRect().](https://www.bennadel.com/blog/3441-translating-viewport-coordinates-into-element-local-coordinates-using-element-getboundingclientrect.htm)
